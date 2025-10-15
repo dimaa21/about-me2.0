@@ -244,12 +244,22 @@ a {
       font-size: 55px;
       font-weight: 700;
 
+      @media screen and (max-width: 768px) {
+        font-size: 10vw;
+      }
+
       .main-text-purple {
         background: linear-gradient(135deg, #ffbdf9, #74248f);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 600;
       }
+    }
+
+    .main-description-text {
+      text-align: center;
+      color: #C5C5C5;
+      font-weight: 100;
     }
   }
 }
