@@ -1,0 +1,41 @@
+{
+  "name": "about-me2.0",
+  "version": "1.0.0",
+  "description": "About Me v2.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaa21/about-me2.0.git"
+  },
+  "keywords": [
+    "About",
+    "Me",
+    "2.0",
+    "is",
+    "a",
+    "modern",
+    "fully",
+    "responsive",
+    "personal",
+    "“About",
+    "Me”"
+  ],
+  "author": "Dmytro Haborak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimaa21/about-me2.0/issues"
+  },
+  "homepage": "https://github.com/dimaa21/about-me2.0#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.93.2"
+  }
+}
