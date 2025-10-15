@@ -1,0 +1,19 @@
+// Шрифти
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+// Підключення шрифтів
+:root {
+  --font-main: 'Poppins', sans-serif;
+  --font-accent: 'Plus Jakarta Sans', sans-serif;
+}
+
+// Основні стилі
+body {
+  font-family: var(--font-main);
+  background-color: #161513;
+  color: #FFFFFF;
+}
+
+.header {
+    background-color: #222222;
+}
