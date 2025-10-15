@@ -316,5 +316,55 @@ a {
         }
       }
     }
+
+    .stack {
+      text-align: center;
+
+      .stack-main-text {
+        font-weight: 200;
+        letter-spacing: 5px;
+        color: #c5c5c5;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .stack-photo {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); // спочатку 5 в ряд
+        gap: 50px;
+        justify-items: center;
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      // Адаптивність
+      @media (max-width: 1024px) {
+        .stack-photo {
+          grid-template-columns: repeat(3, 1fr); // 3 в ряд на середніх екранах
+        }
+      }
+
+      @media (max-width: 768px) {
+        .stack-photo {
+          grid-template-columns: repeat(2, 1fr); // 2 в ряд на маленьких екранах
+        }
+      }
+
+      @media (max-width: 480px) {
+        .stack-photo {
+          grid-template-columns: 1fr; // по одному на дуже маленьких
+        }
+      }
+    }
   }
 }
