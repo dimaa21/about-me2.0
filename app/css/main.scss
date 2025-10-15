@@ -260,6 +260,21 @@ a {
       text-align: center;
       color: #C5C5C5;
       font-weight: 100;
+      max-width: 600px;
+    }
+
+    .main-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      .main-buttons-white,
+      .main-buttons-black {
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0 10px;
+        padding: 10px 20px;
+        border-radius: 30px;
+      }
     }
   }
 }
