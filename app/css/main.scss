@@ -258,22 +258,62 @@ a {
 
     .main-description-text {
       text-align: center;
-      color: #C5C5C5;
+      color: #c5c5c5;
       font-weight: 100;
       max-width: 600px;
     }
 
     .main-buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
 
-      .main-buttons-white,
-      .main-buttons-black {
+      button {
         font-weight: 600;
         font-size: 18px;
-        margin: 0 10px;
-        padding: 10px 20px;
+        padding: 12px 28px;
         border-radius: 30px;
+        border: 2px solid #fff; // базова обводка
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .main-buttons-white {
+        background-color: #fff;
+        color: #000;
+        border-color: #fff;
+
+        &:hover {
+          background-color: #000;
+          color: #fff;
+          border-color: #000;
+          border: 2px solid #fff; // біла обводка
+        }
+      }
+
+      .main-buttons-black {
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff; // біла обводка
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+          border-color: #000;
+        }
+      }
+
+      // Мобільна адаптивність
+      @media (max-width: 768px) {
+        // для екранів менше 768px
+        flex-direction: column;
+        align-items: center;
+
+        button {
+          width: 100%; // можна зробити кнопки на всю ширину, або прибрати
+          max-width: 300px; // щоб не були дуже широкі
+        }
       }
     }
   }
