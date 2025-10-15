@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Базова інформація -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <title>About Me 💻</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./public/img/favicon.png" />
+
+    <!-- Підключення шрифтів -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Сторонні бібліотеки стилів (Bootstrap, FontAwesome) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -13,20 +27,67 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./public/css/main.min.css" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./public/img/favicon.png" />
+    <!-- Основні стилі проекту (мають бути останні) -->
+    <link rel="stylesheet" href="./public/css/main.min.css" />
   </head>
+
   <body>
     <!-- Шапка -->
-    <header class="header container">
-        <div class="header-container">
-
+    <header class="header">
+      <div class="header-container container">
+        <div class="header-logo">
+          <img src="./public/img/logo.png" alt="Logo" />
         </div>
-    </header>   
 
-    <script src="./public/js/main-min.js"></script>
+        <!-- Desktop menu -->
+        <nav class="header-menu">
+          <a data-target="home">Home</a>
+          <a data-target="projects">Projects</a>
+          <a data-target="experience">Experience</a>
+          <a data-target="projects">Projects</a>
+          <button class="header-button">Download CV</button>
+        </nav>
+
+        <!-- Burger -->
+        <div class="menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <!-- Mobile menu -->
+      <nav id="mobileMenu" class="mobile-menu">
+        <ul>
+          <li><a data-target="home">Home</a></li>
+          <li><a data-target="projects">Projects</a></li>
+          <li><a data-target="experience">Experience</a></li>
+          <li><a data-target="projects">Projects</a></li>
+          <li><a data-target="contact">Contact</a></li>
+          <li>
+            <button class="header-button header-button--full">
+              Download CV
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Головна частина сайту -->
+    <main class="main">
+      <div class="main-container container">
+        <div class="main-photo">
+          <img src="./public/img/Avatar.png" alt="" />
+        </div>
+
+        <div class="main-text">
+          I do code and make content
+          <span class="main-text-purple"> about it! </span>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./public/js/main.js"></script>
   </body>
 </html>
