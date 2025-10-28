@@ -367,8 +367,16 @@ a {
 // Блок Проєкти
 .projects {
   margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   .projects-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
     .projects-container-main-text {
       text-align: center;
       font-weight: 700;
@@ -376,54 +384,264 @@ a {
       background: linear-gradient(to right, #ff8660, #d5491d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, opacity 0.3s ease,
+        letter-spacing 0.3s ease;
+
+      // 🔹 При наведенні заголовок трохи збільшується і “дихає”
+      &:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+        letter-spacing: 3px;
+      }
     }
 
     .projects-container-block {
       display: flex;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      text-align: center;
 
       .projects-container-block-project {
-        border-radius: 20px; // 🔹 заокруглення кутиків
-        overflow: hidden; // щоб зображення теж заокруглювались
+        flex: 1 1 300px;
+        max-width: 360px;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #1a1a1a;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 10px 25px rgba(255, 134, 96, 0.25);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.5s ease, filter 0.5s ease;
+
+          .projects-container-block-project:hover & {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+          }
+        }
 
         .projects-container-block-link {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           background-color: #2a2a2a;
+          padding: 10px 15px;
+          transition: background-color 0.3s ease;
+
+          .projects-container-block-project:hover & {
+            background-color: #333;
+          }
 
           .projects-container-block-link-text {
-            font-weight: bold;
-            margin-left: 10px;
+            text-align: left;
+            transition: transform 0.3s ease;
 
             .projects-container-click-to-project {
               color: #c5c5c5;
               font-size: 10px;
+              letter-spacing: 1px;
+              position: relative;
+              transition: color 0.3s ease, letter-spacing 0.3s ease;
+
+              // 🔹 Ефект підкреслення “зліва направо”
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background: linear-gradient(to right, #ff8660, #d5491d);
+                transition: width 0.3s ease;
+              }
             }
 
             .projects-container-description {
               font-size: 15px;
+              color: #fff;
+              transition: color 0.3s ease, transform 0.3s ease;
+            }
+
+            // 🔹 При наведенні: текст рухається і отримує градієнт
+            .projects-container-block-project:hover & {
+              transform: translateX(4px);
+
+              .projects-container-click-to-project {
+                color: #ff8660;
+                letter-spacing: 2px;
+
+                &::after {
+                  width: 100%;
+                }
+              }
+
+              .projects-container-description {
+                background: linear-gradient(to right, #ff8660, #d5491d);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transform: translateY(-2px);
+              }
             }
           }
 
           .projects-container-arrow-link {
-            font-size: 16px;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, stroke 0.3s ease;
 
-            &:hover {
-              transform: translate(4px, -4px);
+            svg {
+              width: 16px;
+              height: 16px;
+              stroke: #fff;
+              stroke-width: 3;
+              transition: stroke 0.3s ease, transform 0.3s ease;
+            }
+
+            .projects-container-block-project:hover & {
+              transform: translate(6px, -6px);
+              svg {
+                stroke: #ff8660;
+              }
             }
           }
         }
       }
+    }
+  }
+
+  // 📱 Мобільна адаптація
+  @media (max-width: 768px) {
+    .projects-container-block {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+
+      .projects-container-block-project {
+        width: 90%;
+        max-width: 380px;
+      }
+    }
+
+    .projects-container-main-text {
+      font-size: 28px;
+    }
+  }
+
+  // 💻 Великі екрани
+  @media (min-width: 1600px) {
+    .projects-container {
+      max-width: 1400px;
+    }
+
+    .projects-container-block-project {
+      max-width: 400px;
+    }
+  }
+}
+
+// Блок Досвід
+.experience {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+
+  .experience-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2a78f4;
+    margin-bottom: 40px;
+  }
+
+  .experience-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #fff; // біла лінія між блоками
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+
+    &:last-child {
+      border-bottom: none; // прибираємо лінію після останнього елементу
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .experience-logo {
+      flex: 0 0 50px;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+
+      &.freelance {
+        background-image: url("/public/img/freelance-logo.png");
+      }
+      &.coolorca {
+        background-image: url("./public/img/coolorca-logo.png");
+      }
+      &.galaktica {
+        background-image: url("./public/img/galaktica-logo.png");
+      }
+    }
+
+    .experience-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .experience-role {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px; // відстань між логотипом і назвою ролі
+      }
+
+      .experience-date {
+        font-size: 14px;
+        color: #aaa;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .experience-description {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #c5c5c5;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .experience-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .experience-logo {
+        margin-bottom: 10px;
+      }
+    }
+
+    .experience-title {
+      font-size: 28px;
     }
   }
 }
