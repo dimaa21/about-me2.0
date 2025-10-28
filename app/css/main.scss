@@ -363,3 +363,21 @@ a {
     }
   }
 }
+
+// Блок Проєкти
+.projects {
+  margin-top: 100px;
+
+  .projects-container {
+    .projects-container-main-text {
+      font-weight: 700;
+      font-size: 35px;
+      background: linear-gradient(to right, #FF8660, #D5491D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
+
