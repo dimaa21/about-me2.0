@@ -373,7 +373,7 @@ a {
       text-align: center;
       font-weight: 700;
       font-size: 35px;
-      background: linear-gradient(to right, #FF8660, #D5491D);
+      background: linear-gradient(to right, #ff8660, #d5491d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 700;
@@ -385,12 +385,45 @@ a {
       gap: 20px;
 
       .projects-container-block-project {
+        border-radius: 20px; // 🔹 заокруглення кутиків
+        overflow: hidden; // щоб зображення теж заокруглювались
 
         .projects-container-block-link {
           display: flex;
+          justify-content: space-between;
+          background-color: #2a2a2a;
+
+          .projects-container-block-link-text {
+            font-weight: bold;
+            margin-left: 10px;
+
+            .projects-container-click-to-project {
+              color: #c5c5c5;
+              font-size: 10px;
+            }
+
+            .projects-container-description {
+              font-size: 15px;
+            }
+          }
+
+          .projects-container-arrow-link {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: translate(4px, -4px);
+            }
+          }
         }
       }
     }
   }
 }
-
