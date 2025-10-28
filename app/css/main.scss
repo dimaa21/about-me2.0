@@ -30,6 +30,7 @@ a {
 .header {
   position: relative;
   z-index: 1001;
+  background-color: #222222;
 
   .header-container {
     display: flex;
@@ -357,12 +358,6 @@ a {
       @media (max-width: 768px) {
         .stack-photo {
           grid-template-columns: repeat(2, 1fr); // 2 в ряд на маленьких екранах
-        }
-      }
-
-      @media (max-width: 480px) {
-        .stack-photo {
-          grid-template-columns: 1fr; // по одному на дуже маленьких
         }
       }
     }
