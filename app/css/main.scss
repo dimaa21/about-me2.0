@@ -370,6 +370,7 @@ a {
 
   .projects-container {
     .projects-container-main-text {
+      text-align: center;
       font-weight: 700;
       font-size: 35px;
       background: linear-gradient(to right, #FF8660, #D5491D);
@@ -377,6 +378,18 @@ a {
       -webkit-text-fill-color: transparent;
       font-weight: 700;
       text-transform: uppercase;
+    }
+
+    .projects-container-block {
+      display: flex;
+      gap: 20px;
+
+      .projects-container-block-project {
+
+        .projects-container-block-link {
+          display: flex;
+        }
+      }
     }
   }
 }
