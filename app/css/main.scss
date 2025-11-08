@@ -556,7 +556,7 @@ a {
 .experience {
   padding: 50px 20px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto;
   color: #fff;
 
   .experience-title {
@@ -565,21 +565,29 @@ a {
     font-weight: 700;
     color: #2a78f4;
     margin-bottom: 40px;
+    transition: all 0.3s ease; // плавний ефект
+
+    &:hover {
+      color: #4fa3ff; // підсвічування
+      transform: scale(1.05); // трохи збільшуємо
+    }
   }
 
   .experience-item {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #fff; // біла лінія між блоками
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
 
-    &:last-child {
-      border-bottom: none; // прибираємо лінію після останнього елементу
-      margin-bottom: 0;
-      padding-bottom: 0;
+    &:hover {
+      transform: scale(1.02);
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .experience-logo {
@@ -589,15 +597,20 @@ a {
       border-radius: 8px;
       background-size: cover;
       background-position: center;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(5deg) scale(1.1);
+      }
 
       &.freelance {
         background-image: url("/public/img/freelance-logo.png");
       }
       &.coolorca {
-        background-image: url("./public/img/coolorca-logo.png");
+        background-image: url("/public/img/coolorca-logo.png");
       }
       &.galaktica {
-        background-image: url("./public/img/galaktica-logo.png");
+        background-image: url("/public/img/galaktica-logo.png");
       }
     }
 
@@ -612,7 +625,12 @@ a {
         margin: 0;
         display: flex;
         align-items: center;
-        gap: 15px; // відстань між логотипом і назвою ролі
+        gap: 15px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #2a78f4;
+        }
       }
 
       .experience-date {
@@ -642,6 +660,82 @@ a {
 
     .experience-title {
       font-size: 28px;
+    }
+  }
+}
+
+// Блок Футер
+.footer {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 50px 20px;
+  font-family: "Arial", sans-serif;
+
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+
+    .footer-info {
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #c5c5c5;
+        margin-bottom: 15px;
+      }
+
+      .footer-email {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        gap: 8px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #2a78f4;
+        }
+
+        svg {
+          fill: currentColor;
+        }
+      }
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .social-icon {
+        font-size: 20px;
+        color: #fff;
+        transition: transform 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          color: #2a78f4;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 }
