@@ -24,12 +24,21 @@ $(document).ready(function () {
   });
 
   // scroll to section
-  $mobile.on("click", "a[data-target]", function (e) {
+  $(document).on("click", "a[data-target]", function (e) {
     e.preventDefault();
+
     const id = $(this).data("target");
     const $target = $("#" + id);
+
     if ($target.length) {
       $("html, body").animate({ scrollTop: $target.offset().top - 70 }, 600);
     }
+  });
+
+  document.getElementById("downloadCV").addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "./public/other/resume.pdf";
+    link.download = "Resume.pdf";
+    link.click();
   });
 });
