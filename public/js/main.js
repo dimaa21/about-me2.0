@@ -35,10 +35,17 @@ $(document).ready(function () {
     }
   });
 
-  document.getElementById("downloadCV").addEventListener("click", () => {
-    const link = document.createElement("a");
-    link.href = "./public/other/resume.pdf";
-    link.download = "Resume.pdf";
-    link.click();
+  // ЗАВАНТАЖЕННЯ CV (і для desktop, і для mobile)
+  document.querySelectorAll(".js-download-cv").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); // щоб не було "submit"/перезавантаження
+
+      const link = document.createElement("a");
+      link.href = "./public/other/resume.pdf"; // твій шлях до файлу
+      link.download = "Resume.pdf";
+      document.body.appendChild(link); // для більшої сумісності
+      link.click();
+      document.body.removeChild(link);
+    });
   });
 });

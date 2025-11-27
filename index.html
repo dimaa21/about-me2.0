@@ -48,7 +48,7 @@
           <a data-target="projects">Projects</a>
           <a data-target="experience">Experience</a>
           <a data-target="projects">Projects</a>
-          <button id="downloadCV" class="header-button">Download CV</button>
+          <button class="header-button js-download-cv">Download CV</button>
         </nav>
 
         <!-- Burger -->
@@ -64,7 +64,7 @@
           <li><a data-target="projects">Projects</a></li>
           <li><a data-target="contact">Contact</a></li>
           <li>
-            <button id="downloadCV" class="header-button header-button--full">
+            <button class="header-button header-button--full js-download-cv">
               Download CV
             </button>
           </li>
@@ -73,7 +73,7 @@
     </header>
 
     <!-- Головна частина сайту -->
-    <main class="main">
+    <main class="main" id="home">
       <div class="main-container container">
         <div class="main-photo">
           <img src="./public/img/Avatar.png" alt="" />
@@ -94,8 +94,8 @@
         </div>
 
         <div class="main-buttons">
-          <button class="main-buttons-white">Get In Touch</button>
-          <button class="main-buttons-black">Download CV</button>
+          <a href="https://t.me/dimaaa_g" class="main-buttons-white">Get In Touch</a>
+          <button class="main-buttons-black js-download-cv">Download CV</button>
         </div>
 
         <div class="stack">
@@ -121,7 +121,10 @@
             <img src="./public/img/portfolio1.png" alt="" />
             <div class="projects-container-block-link">
               <div class="projects-container-block-link-text">
-                <a class="projects-container-click-to-project"
+                <a
+                  class="projects-container-click-to-project"
+                  href="https://dimaa21.github.io/landing-page/"
+                  target="_blank"
                   >CLICK HERE TO VISIT</a
                 >
                 <p class="projects-container-description">IT PROGER LANDING</p>
@@ -146,10 +149,13 @@
             <img src="./public/img/portfolio2.png" alt="" />
             <div class="projects-container-block-link">
               <div class="projects-container-block-link-text">
-                <a class="projects-container-click-to-project"
+                <a
+                  class="projects-container-click-to-project"
+                  href="https://dimaa21.github.io/website-halloween/"
+                  target="_blank"
                   >CLICK HERE TO VISIT</a
                 >
-                <p class="projects-container-description">IT PROGER LANDING</p>
+                <p class="projects-container-description">HALLOWEEN LANDING</p>
               </div>
               <div class="projects-container-arrow-link">
                 <svg
@@ -171,10 +177,13 @@
             <img src="./public/img/portfolio3.png" alt="" />
             <div class="projects-container-block-link">
               <div class="projects-container-block-link-text">
-                <a class="projects-container-click-to-project"
+                <a
+                  class="projects-container-click-to-project"
+                  href="https://dimaa21.github.io/website-restaurant/"
+                  target="_blank"
                   >CLICK HERE TO VISIT</a
                 >
-                <p class="projects-container-description">IT PROGER LANDING</p>
+                <p class="projects-container-description">RESTAURANT WEBSITE</p>
               </div>
               <div class="projects-container-arrow-link">
                 <svg
@@ -243,13 +252,6 @@
       <div class="footer-container">
         <div class="footer-info">
           <h2>Contact</h2>
-          <p>
-            Front-End Developer with 4+ years of experience in building
-            responsive, cross-browser web applications. Skilled in HTML, CSS,
-            SASS/SCSS, JavaScript, React, PHP/Laravel, and modern development
-            tools like Git, Vite, Docker, and Composer. Quick learner, attentive
-            to detail, and effective in collaborative environments.
-          </p>
           <a href="mailto:haborakdmytro7@gmail.com" class="footer-email">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -270,14 +272,21 @@
           </a>
         </div>
         <div class="footer-socials">
-          <a href="#" class="social-icon instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
+          <a
+            href="https://t.me/dimaaa_g"
+            target="_blank"
+            class="social-icon telegram"
+            aria-label="telegram"
+          >
+            <i class="fab fa-telegram"></i>
           </a>
-          <a href="#" class="social-icon x" aria-label="X">
-            <i class="fab fa-x-twitter"></i>
-          </a>
-          <a href="#" class="social-icon youtube" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
+          <a
+            href="https://github.com/dimaa21"
+            target="_blank"
+            class="social-icon github"
+            aria-label="github"
+          >
+            <i class="fab fa-github"></i>
           </a>
         </div>
       </div>
